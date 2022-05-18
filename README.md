@@ -1,4 +1,4 @@
-# Gulp - сборка MaxGraph
+# Gulp - Valentin Alexo На основе сборки MaxGraph
 
 > Используется Gulp 4
 

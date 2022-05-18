@@ -238,7 +238,7 @@ const images = () => {
 };
 
 const favicon = () => {
-     return src([`${paths.srcImgFavicons}/**.{jpg,jpeg,png,svg,ico}`])
+     return src([`${paths.srcImgFavicons}/**.{jpg,jpeg,png,svg}`])
         .pipe(favicons({
             icons: {
                 appleIcon: true,

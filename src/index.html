@@ -1,21 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru" class="page">
+<html lang="ru">
 
 @include('partials/head.html')
 
-<body class="page__body">
-  <div class="site-container">
-    @include('partials/header.html')
-    <main class="main">
-      <picture>
-        <source srcset="img/cover.webp" type="image/webp">
-        <img loading="lazy" src="img/cover.jpg" class="image" width="300" height="300" alt="Обложка канала MaxGraph">
-      </picture>
-    </main>
-
-    @include('partials/footer.html')
-    <!-- @include('html/h1.html') пример include -->
+<body >
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      @include('partials/header.html')
+    </div>
   </div>
+</header>
+<div class="wrapper">
+  <section>
+    <main class="main">
+
+      <!--DEMO!!!!-->
+      <div class="page__body">
+        <div class="site-container">
+          <picture>
+            <source srcset="img/cover.webp" type="image/webp">
+            <img loading="lazy" src="img/cover.jpg" class="image" width="350" height="300" alt="Обложка канала MaxGraph">
+          </picture>
+          <div class="text">
+            Добро пожаловать в стартовый шаблон!
+          </div>
+        </div>
+      </div>
+     <!--END DEMO!!!-->
+
+
+    </main>
+  </section>
+  <section>
+    <footer class="footer">
+      @include('partials/footer.html')
+    </footer>
+  </section>
+</div>
+
+
 </body>
 
 </html>

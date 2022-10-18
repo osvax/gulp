@@ -4,16 +4,17 @@
 @import "vars";
 @import "mixins";
 @import "fonts";
-@import "settings";
+@import "demo";
 @import "media";
 
 // подключения компонентов страницы
 @import "./components/header";
 
-// тестовые стили, удалите их
+/* DEMO!!!!*/
 .page__body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: var(--vh);
 }
+/*DEMO!!!*/

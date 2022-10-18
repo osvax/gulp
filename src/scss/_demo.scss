@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  background: #40C9B9;
 }
 
 *,
@@ -16,15 +17,19 @@ html {
 
 .page__body {
   margin: 0;
-  min-width: 320px;
+  padding: 0;
+  min-width: 100%;
   min-height: 100%;
-  font-size: 16px;
+  font-size: 32px;
+  font-family: Muller;
+  color: #ffffff;
 }
 
 img {
   height: auto;
-  max-width: 100%;
+  min-width: 100%;
   object-fit: cover;
+
 }
 
 a {

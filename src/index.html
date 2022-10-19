@@ -4,41 +4,10 @@
 @include('partials/head.html')
 
 <body >
-<header class="header">
-  <div class="container">
-    <div class="header__inner">
-      @include('partials/header.html')
-    </div>
-  </div>
-</header>
-<div class="wrapper">
-  <section>
-    <main class="main">
 
-      <!--DEMO!!!!-->
-      <div class="page__body">
-        <div class="site-container">
-          <picture>
-            <source srcset="img/cover.webp" type="image/webp">
-            <img loading="lazy" src="img/cover.jpg" class="image" width="350" height="300" alt="Обложка канала MaxGraph">
-          </picture>
-          <div class="text">
-            Добро пожаловать в стартовый шаблон!
-          </div>
-        </div>
-      </div>
-     <!--END DEMO!!!-->
-
-
-    </main>
-  </section>
-  <section>
-    <footer class="footer">
-      @include('partials/footer.html')
-    </footer>
-  </section>
-</div>
-
+@include('partials/header.html')
+@include('partials/main.html')
+@include('partials/footer.html')
 
 </body>
 

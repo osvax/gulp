@@ -1,11 +1,48 @@
 // базовые подключения
-@import "normalize";
-@import "vendors";
-@import "vars";
 @import "mixins";
+@import "normalize";
 @import "fonts";
+@import "vars";
+@import "vendors";
 @import "demo";
 @import "media";
+
+
+html,
+body{
+  height: 100%;
+}
+
+body{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+
+.main{
+  flex: 1 0 auto;
+}
+
+
+.footer{
+  flex: 0 0 auto;
+}
+
+
+.container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
 
 // подключения компонентов страницы
 @import "./components/header";

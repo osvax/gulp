@@ -27,6 +27,7 @@ const gulpif = require('gulp-if');
 const notify = require('gulp-notify');
 const image = require('gulp-imagemin');
 const debug = require('gulp-debug');
+const groupmedia = require('gulp-group-css-media-queries');
 const {
   readFileSync
 } = require('fs');
@@ -107,6 +108,7 @@ const styles = () => {
       })
     ))
     .pipe(mainSass())
+	.pipe(groupmedia())
     .pipe(autoprefixer({
       cascade: false,
       grid: true,
@@ -129,14 +131,19 @@ const stylesBackend = () => {
       })
     ))
     .pipe(mainSass())
+	.pipe(groupmedia())
     .pipe(autoprefixer({
       cascade: false,
       grid: true,
       overrideBrowserslist: ["last 5 versions"]
     }))
+	.pipe(cleanCSS({
+      level: 2
+    }))
     .pipe(dest(paths.buildCssFolder))
     .pipe(browserSync.stream());
 };
+
 
 // scripts
 const scripts = () => {

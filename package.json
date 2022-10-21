@@ -29,6 +29,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-favicons": "^3.0.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
@@ -41,7 +42,6 @@
     "gulp-sass": "^5.0.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^4.1.0",
-    "typograf": "^6.14.1",
     "gulp-webp": "^4.0.1",
     "gulp-zip": "^5.1.0",
     "node-w3c-validator": "^2.0.1",
@@ -51,6 +51,7 @@
     "stylelint": "^14.2.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^5.0.0",
+    "typograf": "^6.14.1",
     "webpack": "^5.65.0",
     "webpack-stream": "^7.0.0"
   },

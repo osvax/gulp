@@ -88,11 +88,22 @@ const svgSprites = () => {
     )
     .pipe(replace('&gt;', '>'))
     .pipe(svgSprite({
-      mode: {
+     /* mode: {
         stack: {
           sprite: "../sprite.svg"
         }
-      },
+      },*/
+	  mode: {
+		symbol: {
+			sprite: "../sprite.svg",
+			render: {
+				scss: {
+					dest:srcFolder + '/scss/_sprite.scss',
+					template: srcFolder + "/scss/templates/_sprite_template.scss"
+				}
+			}
+		}
+	},
     }))
     .pipe(dest(paths.buildImgFolder));
 }
@@ -358,11 +369,11 @@ const toProd = (done) => {
 };
 
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, favicon, webpImages, svgSprites, copy,  watchFiles);
+exports.default = series(clean, svgSprites, htmlInclude, scripts, styles, resources, images, favicon, webpImages, copy,  watchFiles);
 
-exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, favicon, webpImages, svgSprites)
+exports.backend = series(clean, svgSprites, htmlInclude, scriptsBackend, stylesBackend, resources, images, favicon, webpImages)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, favicon, webpImages, svgSprites, htmlMinify);
+exports.build = series(toProd, clean,  svgSprites, htmlInclude, scripts, styles, resources, images, favicon, webpImages, htmlMinify);
 
 exports.cache = series(cache, rewrite);
 

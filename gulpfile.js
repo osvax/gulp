@@ -46,9 +46,10 @@ const buildFolder = './app';
 const paths = {
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
-  srcImgFavicons: `${srcFolder}/img/favicon`,
+  srcImgFavicons: `${srcFolder}/favicon`,
   buildImgFolder: `${buildFolder}/img`,
-  buildImgFavicons: `${buildFolder}/img/favicon`,
+  buildWebpFolder: `${buildFolder}/img/webp`,
+  buildImgFavicons: `${buildFolder}/favicon`,
   srcScss: `${srcFolder}/scss/**/*.scss`,
   buildCssFolder: `${buildFolder}/css`,
   srcFullJs: `${srcFolder}/js/**/*.js`,
@@ -95,7 +96,7 @@ const svgSprites = () => {
       },*/
 	  mode: {
 		symbol: {
-			sprite: "../sprite.svg",
+			sprite: "../sprite/sprite.svg",
 			render: {
 				scss: {
 					dest:srcFolder + '/scss/_sprite.scss',
@@ -241,21 +242,21 @@ const resources = () => {
 }
 
 const images = () => {
-  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg,ico}`])
+  return src([`!${paths.srcSvg}/**/*`, `!${paths.srcImgFavicons}/**/*`, `${paths.srcImgFolder}/**/**.{jpg,jpeg,png,ico}`])
     .pipe(gulpif(isProd, image([
       image.mozjpeg({
         quality: 80,
         progressive: true
       }),
       image.optipng({
-        optimizationLevel: 2
+        optimizationLevel: 5
       }),
     ])))
     .pipe(dest(paths.buildImgFolder))
 };
 
 const favicon = () => {
-     return src([`${paths.srcImgFavicons}/**.{jpg,jpeg,png,svg}`])
+     return src([`${paths.srcImgFavicons}/**.png`])
         .pipe(favicons({
             icons: {
                 appleIcon: true,
@@ -278,7 +279,7 @@ const favicon = () => {
 const webpImages = () => {
   return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
     .pipe(webp())
-    .pipe(dest(paths.buildImgFolder))
+    .pipe(dest(paths.buildWebpFolder))
 };
 
 const htmlInclude = () => {

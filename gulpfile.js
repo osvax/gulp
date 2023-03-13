@@ -89,11 +89,11 @@ const svgSprites = () => {
     )
     .pipe(replace('&gt;', '>'))
     .pipe(svgSprite({
-     /* mode: {
+      mode: {
         stack: {
-          sprite: "../sprite.svg"
+          sprite: "../sprite/sprite.svg"
         }
-      },*/
+      },
 	  mode: {
 		symbol: {
 			sprite: "../sprite/sprite.svg",

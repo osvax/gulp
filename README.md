@@ -2,6 +2,12 @@
 
 > Используется Gulp 5. Тестировалось на node.js 20.12.2
 
+![License](https://img.shields.io/github/license/osvax/gulp)
+![GitHub stars](https://img.shields.io/github/stars/osvax/gulp.svg?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/osvax/gulp.svg?style=social)<br>
+<a href="https://t.me/valentinalexo"><img src="https://img.shields.io/badge/Donate%20to%20me%20(Telegram%20TON)-UQC5GESVoOmFKJ8Khw8wwGIM3stCsnrXRHDcdfHvVjwR4ddL-blue?style=for-the-badge"></a>
+
+
 <p>
 	<img width="1280" height="640" src="https://repository-images.githubusercontent.com/493175945/a5c4167f-4462-4f86-83dc-5034769a5617" alt="Gulp starter 2023">
 </p>

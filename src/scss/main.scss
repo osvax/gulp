@@ -1,0 +1,27 @@
+
+/* Базовые подключения */
+
+@import "sprite";
+@import "mixins";
+@import "normalize";
+@import "fonts";
+@import "vars";
+@import "vendors";
+@import "global";
+
+
+
+// подключения компонентов страницы
+@import "header";
+
+/* DEMO!!!! */
+@import "demo";
+
+.page__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--vh);
+}
+
+/* DEMO!!! */

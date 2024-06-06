@@ -57,3 +57,12 @@ export const jsRename = () => {
     .pipe(sourcemaps.write())
     .pipe(app.gulp.dest(app.paths.buildJsFolder, { sourcemaps: "." }));
 };
+
+
+export const htaccess = () => {
+  return app.gulp.src([`${app.paths.base.src}/*.access`])
+    .pipe(
+      rename(".htaccess")
+    )
+    .pipe(app.gulp.dest(app.paths.base.build));
+};

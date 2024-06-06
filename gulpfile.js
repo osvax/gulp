@@ -20,6 +20,7 @@ import { htmlMinify } from './gulp/tasks/html-minify.js';
 import { zipFiles } from './gulp/tasks/zip.js';
 import { styleRename } from "./gulp/tasks/rename.js";
 import { jsRename } from "./gulp/tasks/rename.js";
+import { htaccess } from "./gulp/tasks/rename.js";
 
 
 global.app = {
@@ -52,7 +53,7 @@ const watcher = () => {
 
 const dev = gulp.series(clean, htmlInclude, scripts, styles, resources, images, favicon, webpImages, svgSprites, watcher);
 const backend = gulp.series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites);
-const build = gulp.series(clean, htmlInclude, scripts, styles, styleRename, jsRename, resources, images, webpImages, svgSprites, /*htmlMinify*/);
+const build = gulp.series(clean, htmlInclude, scripts, styles, styleRename, jsRename, htaccess, resources, images, webpImages, svgSprites, /*htmlMinify*/);
 const cache = gulp.series(cacheTask, rewrite);
 const zip = zipFiles;
 

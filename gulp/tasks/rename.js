@@ -5,8 +5,7 @@ import sourcemaps from "gulp-sourcemaps";
 
 
 export const styleRename = () => {
-  return app.gulp
-    .src(`${app.paths.buildCssFolder}/*.css`, { sourcemaps: !app.isProd })
+  return app.gulp.src(`${app.paths.buildCssFolder}/*.css`, { sourcemaps: !app.isProd })
     .pipe(
       rename({
         suffix: ".min",
@@ -38,8 +37,7 @@ export const styleRename = () => {
 };
 
 export const jsRename = () => {
-  return app.gulp
-    .src(`${app.paths.buildJsFolder}/*.js`, { sourcemaps: !app.isProd })
+  return app.gulp.src(`${app.paths.buildJsFolder}/*.js`, { sourcemaps: !app.isProd })
     .pipe(
       rename({
         suffix: ".min",

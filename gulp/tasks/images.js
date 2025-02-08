@@ -1,5 +1,5 @@
 import gulpif from 'gulp-if';
-import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
+import imagemin from 'imagemin';
 import newer from "gulp-newer";
 
 export const images = () => {

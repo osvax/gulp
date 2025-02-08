@@ -1,21 +1,20 @@
 
 /* Базовые подключения */
 
-@import "sprite";
-@import "mixins";
-@import "normalize";
-@import "fonts";
-@import "vars";
-@import "vendors";
-@import "global";
+@use 'sprite';
+@use 'mixins'   as *;
+@use 'normalize';
+@forward 'fonts';
+@use 'vendors';
+@use 'global';
 
 
 
 // подключения компонентов страницы
-@import "header";
+@use 'header';
 
 /* DEMO!!!! */
-@import "demo";
+@use 'demo';
 
 .page__body {
   display: flex;

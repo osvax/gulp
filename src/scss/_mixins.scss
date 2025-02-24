@@ -1,8 +1,8 @@
-@use "./mixins/breakpoint";
-@use "./mixins/burger";
-@use "./mixins/checkbox";
-@use "./mixins/flex";
-@use "./mixins/mini";
-@use "./mixins/tabs";
-@use "./mixins/disable-mob-hover";
-@use "./mixins/layout";
+@forward "./mixins/breakpoint";
+@forward "./mixins/burger";
+@forward "./mixins/checkbox";
+@forward"./mixins/flex";
+@forward "./mixins/mini";
+@forward "./mixins/tabs";
+@forward "./mixins/disable-mob-hover";
+@forward "./mixins/layout";

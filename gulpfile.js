@@ -2,7 +2,31 @@ import gulp from 'gulp';
 import browserSync from 'browser-sync';
 
 
-import { paths } from './gulp/config/paths.js';
+const methodCompiller = 'sass'; // Меняем Scss на Sass в зависимости от нужд
+const srcFolder = './src';
+const buildFolder = './app';
+
+export const paths = {
+  base: {
+    src: srcFolder,
+    build: buildFolder,
+  },
+  srcSvg: `${srcFolder}/img/svg/**.svg`,
+  srcImgFolder: `${srcFolder}/img`,
+  buildImgFolder: `${buildFolder}/img`,
+  srcScss: `${srcFolder}/${methodCompiller}/**/*.${methodCompiller}`, 
+  buildCssFolder: `${buildFolder}/css`,
+  srcFullJs: `${srcFolder}/js/**/*.js`,
+  srcMainJs: `${srcFolder}/js/main.js`,
+  buildJsFolder: `${buildFolder}/js`,
+  srcPartialsFolder: `${srcFolder}/partials`,
+  resourcesFolder: `${srcFolder}/resources`,
+  srcImgFavicons: `${srcFolder}/favicon.png`,
+  buildImgFavicons: `${buildFolder}`,
+};
+
+
+
 import { clean } from './gulp/tasks/clean.js';
 import { svgSprites } from './gulp/tasks/sprite.js';
 import { styles } from './gulp/tasks/styles.js';

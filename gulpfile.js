@@ -36,6 +36,7 @@ const watcher = () => {
     },
     notify: false,
     port: 3000,
+	browser: "c:\\Program Files\\Firefox Developer Edition\\firefox.exe",
   });
 
 

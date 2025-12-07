@@ -22,7 +22,7 @@ export const paths = {
   srcPartialsFolder: `${srcFolder}/partials`,
   resourcesFolder: `${srcFolder}/resources`,
   srcImgFavicons: `${srcFolder}/favicon.png`,
-  buildImgFavicons: `${buildFolder}`,
+  buildImgFavicons: `${buildFolder}/favicon`,
 };
 
 
@@ -62,8 +62,33 @@ const watcher = () => {
     port: 3000,
 	browser: "c:\\Program Files\\Firefox Developer Edition\\firefox.exe",
   });
+  
+  
+/********************************************
+* ДЛЯ ЗАПУСКА ПРОКСИ В ДИРЕКТОРИИ СКРИПТА ЗАПУСТИТЕ КОМАНДУ
+* PHPCLI .  (ТОЧА ЭТО АРГУМЕНТ ТЕКУЩЕЙ ДИРЕКТОРИИ)
+* РАСКОМИНТИРУЙТЕ НИЖНИЙ СКРИПТ И ЗАКОМЕНТИРУЙТЕ ВЕРХНИЙ
+*
+*
+**********************************************
+const watcher = () => {
+  browserSync.init({
+	  "ui": {
+        "port": 4000
+    }
+    "server": false,
+	"proxy": {
+		target: "localhost:9000",
+		proxyReq: [
+			function(proxyReq) {
+				proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
+			}
+		]
+	},
+	browser: "c:\\Program Files\\Firefox Developer Edition\\firefox.exe",
+  });  
 
-
+********************************************************/
 
   gulp.watch(app.paths.srcScss, styles);
   gulp.watch(app.paths.srcFullJs, scripts);

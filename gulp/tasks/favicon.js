@@ -16,7 +16,7 @@ export const favicon = () => {
                 coast: false
             }
         }))
-        .pipe(app.gulp.dest(app.paths.base.build))
+        .pipe(app.gulp.dest(app.paths.buildImgFavicons))
         .pipe(debug({
             "title": "Favicons"
         }));

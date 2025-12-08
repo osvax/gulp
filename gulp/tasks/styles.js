@@ -7,6 +7,8 @@ import plumber from 'gulp-plumber';
 import autoprefixer from 'gulp-autoprefixer';
 import notify from 'gulp-notify';
 import gcmq from 'gulp-group-css-media-queries';
+import rename from "gulp-rename";
+
 
 
 
@@ -14,6 +16,11 @@ const sass = gulpSass(dartSass);
 
 export const styles = () => {
   return app.gulp.src(app.paths.srcScss, { sourcemaps: !app.isProd })
+	  .pipe(
+		  rename({
+		    suffix: !app.isProd ? '.min': false,
+		  })
+		)
     .pipe(plumber(
       notify.onError({
         title: "SCSS",
@@ -27,8 +34,6 @@ export const styles = () => {
       overrideBrowserslist: ["last 5 versions"]
     }))
 	.pipe(gcmq())
-    
-   
     .pipe(app.gulp.dest(app.paths.buildCssFolder, { sourcemaps: '.' }))
     .pipe(browserSync.stream());
 };

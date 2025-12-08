@@ -14,7 +14,7 @@ export const scripts = () => {
     .pipe(webpackStream({
       mode: app.isProd ? 'production' : 'development',
       output: {
-        filename: 'main.js',
+        filename: app.isProd ?  'main.js': 'main.min.js' ,
       },
       module: {
         rules: [{

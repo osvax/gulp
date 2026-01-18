@@ -1,20 +1,20 @@
 
 /* Базовые подключения */
-
+@use 'normalize';
 @use 'sprite';
 @use 'mixins'   as *;
-@use 'normalize';
 @forward 'fonts';
 @use 'vendors';
 @use 'global';
+@use 'form';
 
 
 
 // подключения компонентов страницы
-@use 'header';
+//@use 'header';
 
 /* DEMO!!!! */
-@use 'demo';
+//@use 'demo';
 
 .page__body {
   display: flex;

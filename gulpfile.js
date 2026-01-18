@@ -52,30 +52,31 @@ global.app = {
   isProd: process.argv.includes('--build'),
   paths,
 }
-
+/*
 const watcher = () => {
   browserSync.init({
     server: {
       baseDir: `${app.paths.base.build}`
     },
+    hostMode: { clicks: false },
     notify: false,
-    port: 3000,
+    online: true,
 	browser: "c:\\Program Files\\Firefox Developer Edition\\firefox.exe",
   });
   
   
-/********************************************
+********************************************//*
 * ДЛЯ ЗАПУСКА ПРОКСИ В ДИРЕКТОРИИ СКРИПТА ЗАПУСТИТЕ КОМАНДУ
 * PHPCLI .  (ТОЧА ЭТО АРГУМЕНТ ТЕКУЩЕЙ ДИРЕКТОРИИ)
 * РАСКОМИНТИРУЙТЕ НИЖНИЙ СКРИПТ И ЗАКОМЕНТИРУЙТЕ ВЕРХНИЙ
 *
 *
-**********************************************
+**********************************************/
 const watcher = () => {
   browserSync.init({
 	  "ui": {
         "port": 4000
-    }
+    },
     "server": false,
 	"proxy": {
 		target: "localhost:9000",
@@ -88,7 +89,7 @@ const watcher = () => {
 	browser: "c:\\Program Files\\Firefox Developer Edition\\firefox.exe",
   });  
 
-********************************************************/
+/*********************************************************/
 
   gulp.watch(app.paths.srcScss, styles);
   gulp.watch(app.paths.srcFullJs, scripts);
